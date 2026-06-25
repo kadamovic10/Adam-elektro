@@ -1,244 +1,43 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
+// Promena boje navigacije pri skrolovanju
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#0b0b0b;
-    color:white;
-}
+const navbar = document.querySelector(".navbar");
 
-.navbar{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    background:rgba(0,0,0,.85);
-    backdrop-filter:blur(12px);
-    z-index:999;
-}
+window.addEventListener("scroll", () => {
 
-.brand{
-    font-size:28px;
-    color:#ffb000;
-    font-weight:bold;
-}
+    if (window.scrollY > 50) {
+        navbar.style.background = "#000";
+    } else {
+        navbar.style.background = "rgba(0,0,0,.85)";
+    }
 
-.nav-links a{
-    margin-left:30px;
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
+});
 
-.nav-links a:hover{
-    color:#ffb000;
-}
+// Animacija kartica
 
-.hero{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
-    url("images/hero.jpg");
-    background-size:cover;
-    background-position:center;
-}
+const cards = document.querySelectorAll(".card");
 
-.hero-content{
-    max-width:900px;
-}
+const observer = new IntersectionObserver((entries)=>{
 
-.badge{
-    color:#ffb000;
-    margin-bottom:20px;
-    letter-spacing:2px;
-}
+    entries.forEach(entry=>{
 
-.hero h1{
-    font-size:72px;
-    margin-bottom:20px;
-}
+        if(entry.isIntersecting){
 
-.subtitle{
-    font-size:24px;
-    color:#d8d8d8;
-}
+            entry.target.style.opacity="1";
+            entry.target.style.transform="translateY(0px)";
 
-.hero-buttons{
-    margin-top:40px;
-}
+        }
 
-.btn{
-    display:inline-block;
-    padding:16px 35px;
-    border-radius:10px;
-    text-decoration:none;
-    margin:10px;
-    font-weight:bold;
-    transition:.3s;
-}
+    });
 
-.primary{
-    background:#ffb000;
-    color:black;
-}
+});
 
-.secondary{
-    border:2px solid #ffb000;
-    color:white;
-}
+cards.forEach(card=>{
 
-.btn:hover{
-    transform:translateY(-5px);
-}
+    card.style.opacity="0";
+    card.style.transform="translateY(50px)";
+    card.style.transition="0.8s";
 
-section{
-    padding:90px 10%;
-}
+    observer.observe(card);
 
-.section h2,
-.about h2,
-.contact h2{
-    text-align:center;
-    font-size:42px;
-    color:#ffb000;
-    margin-bottom:50px;
-}
-
-.about{
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:50px;
-    align-items:center;
-}
-
-.about-card{
-    background:#161616;
-    padding:35px;
-    border-radius:15px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:#171717;
-    padding:30px;
-    border-radius:15px;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 20px rgba(255,176,0,.35);
-}
-
-.card h3{
-    color:#ffb000;
-    margin-bottom:15px;
-}
-
-.stats{
-    display:flex;
-    justify-content:space-around;
-    text-align:center;
-    padding:70px 10%;
-    background:#111;
-}
-
-.stats strong{
-    display:block;
-    font-size:55px;
-    color:#ffb000;
-}
-
-.stats span{
-    color:#bbb;
-}
-
-.dark{
-    background:#111;
-}
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
-
-.gallery img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    border-radius:12px;
-    transition:.3s;
-}
-
-.gallery img:hover{
-    transform:scale(1.04);
-}
-
-.contact{
-    text-align:center;
-}
-
-.contact-box{
-    margin:40px auto;
-    max-width:500px;
-    background:#171717;
-    padding:30px;
-    border-radius:15px;
-}
-
-.contact-box p{
-    margin:15px 0;
-    font-size:20px;
-}
-
-footer{
-    background:black;
-    text-align:center;
-    padding:30px;
-    color:#888;
-}
-
-@media(max-width:850px){
-
-.navbar{
-flex-direction:column;
-}
-
-.nav-links{
-margin-top:20px;
-}
-
-.hero h1{
-font-size:46px;
-}
-
-.subtitle{
-font-size:18px;
-}
-
-.about{
-grid-template-columns:1fr;
-}
-
-.stats{
-flex-direction:column;
-gap:40px;
-}
-
+});
 }
