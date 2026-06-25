@@ -3,274 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adam Elektro</title>
-
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: Arial, sans-serif;
-      background:#080808;
-      color:#fff;
-      line-height:1.6;
-    }
-    a { color:inherit; text-decoration:none; }
-
-    header {
-      min-height:100vh;
-      background:
-        linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
-        url("images/hero.jpg") center/cover no-repeat;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:30px;
-    }
-
-    .hero img {
-      max-width:420px;
-      width:90%;
-      margin-bottom:30px;
-    }
-
-    .hero h1 {
-      font-size:48px;
-      color:#ffb000;
-      margin-bottom:15px;
-    }
-
-    .hero p {
-      font-size:22px;
-      max-width:800px;
-      margin:auto;
-      color:#ddd;
-    }
-
-    .buttons {
-      margin-top:35px;
-      display:flex;
-      gap:15px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-
-    .btn {
-      padding:14px 26px;
-      border-radius:8px;
-      font-weight:bold;
-      background:#ffb000;
-      color:#000;
-    }
-
-    .btn.dark {
-      background:transparent;
-      color:#fff;
-      border:1px solid #ffb000;
-    }
-
-    section {
-      padding:80px 10%;
-    }
-
-    h2 {
-      font-size:36px;
-      margin-bottom:35px;
-      color:#ffb000;
-      text-align:center;
-    }
-
-    .about {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-      align-items:center;
-    }
-
-    .about img, .gallery img {
-      width:100%;
-      border-radius:14px;
-      box-shadow:0 0 25px rgba(255,176,0,.18);
-    }
-
-    .cards {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-      gap:22px;
-    }
-
-    .card {
-      background:#121212;
-      padding:28px;
-      border-radius:14px;
-      border:1px solid #222;
-      transition:.3s;
-    }
-
-    .card:hover {
-      transform:translateY(-6px);
-      border-color:#ffb000;
-    }
-
-    .card h3 {
-      color:#ffb000;
-      margin-bottom:10px;
-    }
-
-    .gallery {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
-      gap:18px;
-    }
-
-    .gallery img {
-      height:240px;
-      object-fit:cover;
-    }
-
-    .projects {
-      background:#0f0f0f;
-    }
-
-    .contact {
-      text-align:center;
-      background:#111;
-    }
-
-    .contact p {
-      font-size:20px;
-      margin:12px 0;
-    }
-
-    footer {
-      text-align:center;
-      padding:25px;
-      background:#050505;
-      color:#888;
-    }
-
-    @media(max-width:800px) {
-      .about { grid-template-columns:1fr; }
-      .hero h1 { font-size:36px; }
-      .hero p { font-size:18px; }
-      section { padding:60px 6%; }
-    }
-  </style>
+  <title>Adam Elektro | Elektroinstalacije i automatika</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<header>
-  <div class="hero">
-    <img src="images/logo.jpg" alt="Adam Elektro logo">
-    <h1>Adam Elektro</h1>
-    <p>Elektroinstalacije, automatika, servis elektronike, video nadzor i razvoj pametnih elektro rešenja.</p>
-
-    <div class="buttons">
-      <a class="btn" href="tel:+381600000000">Pozovi odmah</a>
-      <a class="btn dark" href="mailto:adamelektro@gmail.com">Pošalji upit</a>
+  <nav class="navbar">
+    <div class="brand">⚡ Adam Elektro</div>
+    <div class="nav-links">
+      <a href="#usluge">Usluge</a>
+      <a href="#projekti">Projekti</a>
+      <a href="#galerija">Galerija</a>
+      <a href="#kontakt">Kontakt</a>
     </div>
-  </div>
-</header>
+  </nav>
 
-<section>
-  <h2>O nama</h2>
-  <div class="about">
+  <header class="hero">
+    <div class="hero-content">
+      <p class="badge">Elektroinstalacije • Automatika • Servis elektronike</p>
+      <h1>Adam Elektro</h1>
+      <p class="subtitle">
+        Moderna elektro rešenja za kuće, lokale, radionice i pametne sisteme.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#kontakt" class="btn primary">Zatraži ponudu</a>
+        <a href="tel:+381600000000" class="btn secondary">Pozovi odmah</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="about">
     <div>
+      <h2>Precizno. Uredno. Tehnički ozbiljno.</h2>
       <p>
-        Adam Elektro se bavi elektro radovima, servisom, automatikom i razvojem elektronskih rešenja.
-        Radimo precizno, odgovorno i tehnički ozbiljno — od obične montaže rasvete do projektovanja automatike i PCB rešenja.
-      </p>
-      <br>
-      <p>
-        Naš cilj je da spojimo klasične elektroinstalacije sa modernim tehnologijama: pametne kuće, kontrola uređaja, video nadzor i automatizacija objekata.
+        Adam Elektro spaja klasične elektro radove sa savremenom automatikom,
+        elektronikom i pametnim rešenjima. Radimo instalacije, rasvetu,
+        video nadzor, servis elektronike, PCB projekte i automatizaciju.
       </p>
     </div>
-    <img src="images/rad.jpg" alt="Adam Elektro rad">
-  </div>
-</section>
 
-<section>
-  <h2>Naše usluge</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>⚡ Elektroinstalacije</h3>
-      <p>Instalacije za kuće, lokale, radionice i pomoćne objekte.</p>
+    <div class="about-card">
+      <h3>Šta radimo?</h3>
+      <p>Od montaže plafonjere do razvoja pametnog elektro sistema.</p>
+    </div>
+  </section>
+
+  <section id="usluge" class="section">
+    <h2>Naše usluge</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>⚡ Elektroinstalacije</h3>
+        <p>Instalacije za kuće, lokale, radionice i pomoćne objekte.</p>
+      </div>
+
+      <div class="card">
+        <h3>💡 Rasveta</h3>
+        <p>Montaža plafonjera, LED rasvete, dekorativne i spoljne rasvete.</p>
+      </div>
+
+      <div class="card">
+        <h3>📹 Video nadzor</h3>
+        <p>Kamere, povezivanje sistema i podešavanje nadzora.</p>
+      </div>
+
+      <div class="card">
+        <h3>🔧 Servis elektronike</h3>
+        <p>Dijagnostika i popravka elektronskih i elektro uređaja.</p>
+      </div>
+
+      <div class="card">
+        <h3>🤖 Automatika</h3>
+        <p>ESP32, releji, senzori, kontroleri i pametna rešenja.</p>
+      </div>
+
+      <div class="card">
+        <h3>🖥️ PCB projektovanje</h3>
+        <p>Projektovanje elektronskih ploča, prototipova i namenskih uređaja.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div>
+      <strong>5+</strong>
+      <span>godina rada sa elektronikom</span>
+    </div>
+    <div>
+      <strong>20+</strong>
+      <span>servisa i manjih radova</span>
+    </div>
+    <div>
+      <strong>100%</strong>
+      <span>fokus na urednost i kvalitet</span>
+    </div>
+  </section>
+
+  <section id="projekti" class="section dark">
+    <h2>Projekti i razvoj</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Black Box</h3>
+        <p>Automobilski elektronski uređaj razvijan kao takmičarski projekat.</p>
+      </div>
+
+      <div class="card">
+        <h3>Pametne kuće</h3>
+        <p>Sistemi za kontrolu rasvete, utičnica, roletni i automatike objekta.</p>
+      </div>
+
+      <div class="card">
+        <h3>Industrijska elektronika</h3>
+        <p>Servis, analiza i povezivanje elektronskih modula i kontrolnih sistema.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerija" class="section">
+    <h2>Galerija radova</h2>
+
+    <div class="gallery">
+      <img src="images/rad.jpg" alt="Adam Elektro rad">
+      <img src="images/orman.jpg" alt="Elektro ormar">
+      <img src="images/instalacije.jpg" alt="Elektroinstalacije">
+      <img src="images/pcb.jpg" alt="PCB projekat">
+      <img src="images/automatika.jpg" alt="Automatika">
+      <img src="images/rasveta.jpg" alt="Rasveta">
+    </div>
+  </section>
+
+  <section id="kontakt" class="contact">
+    <h2>Kontakt</h2>
+    <p>Za dogovor, ponudu ili procenu radova:</p>
+
+    <div class="contact-box">
+      <p>📞 060/000-0000</p>
+      <p>📧 adamelektro@gmail.com</p>
+      <p>📍 Čačak i okolina</p>
     </div>
 
-    <div class="card">
-      <h3>💡 Rasveta</h3>
-      <p>Montaža plafonjera, LED rasvete, dekorativne i spoljne rasvete.</p>
+    <div class="hero-buttons">
+      <a href="tel:+381600000000" class="btn primary">Pozovi</a>
+      <a href="mailto:adamelektro@gmail.com" class="btn secondary">Pošalji email</a>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>📹 Video nadzor</h3>
-      <p>Ugradnja kamera, povezivanje sistema i podešavanje nadzora.</p>
-    </div>
+  <footer>
+    © 2026 Adam Elektro — Elektroinstalacije, automatika i servis elektronike
+  </footer>
 
-    <div class="card">
-      <h3>🔧 Servis elektronike</h3>
-      <p>Dijagnostika i popravka elektronskih i elektro uređaja.</p>
-    </div>
-
-    <div class="card">
-      <h3>🤖 Automatika</h3>
-      <p>ESP32, relejna automatika, senzori, kontroleri i pametna rešenja.</p>
-    </div>
-
-    <div class="card">
-      <h3>🖥️ PCB projektovanje</h3>
-      <p>Projektovanje elektronskih ploča, prototipova i namenskih uređaja.</p>
-    </div>
-  </div>
-</section>
-
-<section class="projects">
-  <h2>Projekti i razvoj</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Black Box</h3>
-      <p>Razvoj mini automobilske elektronske kutije — projekat predstavljen na Galaksija kupu.</p>
-    </div>
-
-    <div class="card">
-      <h3>Pametne kuće</h3>
-      <p>Razvoj sistema za kontrolu rasvete, utičnica, roletni i automatike objekta.</p>
-    </div>
-
-    <div class="card">
-      <h3>Industrijska elektronika</h3>
-      <p>Servis, analiza i povezivanje elektronskih modula i kontrolnih sistema.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Galerija radova</h2>
-  <div class="gallery">
-    <img src="images/orman.jpg" alt="Elektro ormar">
-    <img src="images/instalacije.jpg" alt="Elektroinstalacije">
-    <img src="images/pcb.jpg" alt="PCB projektovanje">
-    <img src="images/automatika.jpg" alt="Automatika">
-    <img src="images/rasveta.jpg" alt="Rasveta">
-    <img src="images/objekat.jpg" alt="Objekat noću">
-  </div>
-</section>
-
-<section class="contact">
-  <h2>Kontakt</h2>
-  <p>📞 060/000-0000</p>
-  <p>📧 adamelektro@gmail.com</p>
-  <p>📍 Čačak i okolina</p>
-
-  <div class="buttons">
-    <a class="btn" href="tel:+381600000000">Pozovi</a>
-    <a class="btn dark" href="mailto:adamelektro@gmail.com">Pošalji email</a>
-  </div>
-</section>
-
-<footer>
-  © 2026 Adam Elektro — Elektroinstalacije, automatika i servis elektronike
-</footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
