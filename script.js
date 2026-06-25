@@ -1,43 +1,14 @@
-// Promena boje navigacije pri skrolovanju
-
-const navbar = document.querySelector(".navbar");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 50) {
-        navbar.style.background = "#000";
-    } else {
-        navbar.style.background = "rgba(0,0,0,.85)";
-    }
-
-});
-
-// Animacija kartica
-
-const cards = document.querySelectorAll(".card");
-
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.style.opacity="1";
-            entry.target.style.transform="translateY(0px)";
-
-        }
-
-    });
-
-});
-
-cards.forEach(card=>{
-
-    card.style.opacity="0";
-    card.style.transform="translateY(50px)";
-    card.style.transition="0.8s";
-
-    observer.observe(card);
-
-});
-}
+const nav=document.querySelector('.nav');
+const menuBtn=document.querySelector('.menu-btn');
+const navLinks=document.querySelector('.nav-links');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>30));
+menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const lightbox=document.querySelector('.lightbox');
+const lightImg=lightbox.querySelector('img');
+const lightText=lightbox.querySelector('p');
+document.querySelectorAll('.gallery-item').forEach(item=>{item.addEventListener('click',()=>{const img=item.querySelector('img');lightImg.src=img.src;lightImg.alt=img.alt;lightText.textContent=item.dataset.title||img.alt;lightbox.classList.add('active');lightbox.setAttribute('aria-hidden','false')})});
+document.querySelector('.close').addEventListener('click',()=>{lightbox.classList.remove('active');lightbox.setAttribute('aria-hidden','true')});
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)document.querySelector('.close').click()});
