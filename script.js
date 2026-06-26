@@ -1,14 +1,4 @@
-const nav=document.querySelector('.nav');
-const menuBtn=document.querySelector('.menu-btn');
-const navLinks=document.querySelector('.nav-links');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>30));
-menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
-document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
-const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-const lightbox=document.querySelector('.lightbox');
-const lightImg=lightbox.querySelector('img');
-const lightText=lightbox.querySelector('p');
-document.querySelectorAll('.gallery-item').forEach(item=>{item.addEventListener('click',()=>{const img=item.querySelector('img');lightImg.src=img.src;lightImg.alt=img.alt;lightText.textContent=item.dataset.title||img.alt;lightbox.classList.add('active');lightbox.setAttribute('aria-hidden','false')})});
-document.querySelector('.close').addEventListener('click',()=>{lightbox.classList.remove('active');lightbox.setAttribute('aria-hidden','true')});
-lightbox.addEventListener('click',e=>{if(e.target===lightbox)document.querySelector('.close').click()});
+const loader=document.getElementById('loader');window.addEventListener('load',()=>setTimeout(()=>loader.classList.add('hide'),450));
+const menuBtn=document.getElementById('menuBtn');const navLinks=document.getElementById('navLinks');menuBtn.addEventListener('click',()=>navLinks.classList.toggle('active'));document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('active')));
+const reveal=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el));
+const lightbox=document.querySelector('.lightbox');const lightImg=lightbox.querySelector('img');const lightText=lightbox.querySelector('p');document.querySelectorAll('.gallery-item').forEach(item=>{item.addEventListener('click',()=>{const img=item.querySelector('img');lightImg.src=img.src;lightImg.alt=img.alt;lightText.textContent=item.dataset.title;lightbox.classList.add('active');lightbox.setAttribute('aria-hidden','false')})});document.querySelector('.close').addEventListener('click',()=>{lightbox.classList.remove('active');lightbox.setAttribute('aria-hidden','true')});lightbox.addEventListener('click',e=>{if(e.target===lightbox)document.querySelector('.close').click()});
